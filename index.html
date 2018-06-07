@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Interactive Stepping Exercise</title>
+    <!-- <link rel="icon" href="asset/img-m/web-logo.png"> -->
+    <meta name="description" content="復健路上、您不孤單。">
+    <meta name="keywords" content="">
+    <meta name="author" content="Georgech3">
+    <!--Import Google Icon Font-->
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <!--Import materialize.css-->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0-beta/css/materialize.min.css">
+    <!--Let browser know website is optimized for mobile-->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!--JavaScript at end of body for optimized loading-->
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0-beta/js/materialize.min.js"></script>
+    <style type="text/css">
+    body {
+        height: 100vh;
+        widows: 100vh;
+    }
+
+    section {
+        height: 100%;
+        widows: 100%;
+    }
+    </style>
+</head>
+
+<body>
+    <section id="menu">
+        <div class="row container" style="">
+            <div class="center" style="background-image: url('asset/img/menu-title.png');background-size:100%;background-position:center;background-repeat:no-repeat;min-height:30vh;width: 100%"></div>
+        </div>
+        <div class="row">
+            <div class="center" style="background-image: url('asset/img/menu-icon.png');background-size:auto 100%;background-position:center;background-repeat:no-repeat;min-height:50vh;width: 100%">
+                <div class="row">
+                    <div id="btn-game-menu" class="col m4 push-m4 menu-btn" style="height:11vh;"></div>
+                </div>
+                <div class="row">
+                    <div id="btn-tutorial" class="col m4 push-m4 menu-btn" style="height:11vh;"></div>
+                </div>
+                <div class="row">
+                    <div id="btn-statics" class="col m4 push-m4 menu-btn" style="height:11vh;"></div>
+                </div>
+                <div class="row">
+                    <div id="btn-setting" class="col m4 push-m4 menu-btn" style="height:11vh;"></div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <section id="game-menu" style="display: none">
+        <div id="game-start-nav" class="row" style="height:15vh;padding:2em">
+            <div id="back" class="left col m2"><img src="asset/img/back.png" style="height: 15vh;width: auto;"></div>
+            <div id="btn-demo" class="col m2" style="height: 15vh;display: none">
+                <img id="btn-demo-start" src="asset/img/demo-start.png" style="height: 15vh">
+                <img id="btn-demo-stop" src="asset/img/demo-stop.png" style="height: 15vh;display: none">
+            </div>
+            <div id="btn-back-menu" class="right col m2"><img src="asset/img/btn-menu.png" style="height: 15vh;width: auto;"></div>
+        </div>
+        <div id="game-levels-menu">
+            <div style="min-height: 70vh;width: auto;">
+                <div class="row center blue-text">
+                    <div class="" style="height:10vh;">
+                        <h1>level</h1>
+                    </div>
+                </div>
+                <div class="row center blue-text">
+                    <div id="btn-level-1" class="col m4 push-m4 btn-game-level" style="height:20vh;"><img src="asset/img/level-1.png" style="width:30vw"></div>
+                </div>
+                <div class="row center blue-text">
+                    <div id="btn-level-2" class="col m4 push-m4 btn-game-level" style="height:20vh;"><img src="asset/img/level-2.png" style="width:30vw"></div>
+                </div>
+                <div class="row center blue-text">
+                    <div id="btn-level-3" class="col m4 push-m4 btn-game-level" style="height:20vh;"><img src="asset/img/level-3.png" style="width:30vw"></div>
+                </div>
+            </div>
+        </div>
+        <div id="levels-screen" style="display: none;">
+            <div class="row center" style="">
+                <h1>Pattern</h1>
+            </div>
+            <div id="demo" class="row" style="">
+            	<img class="col m4" src="asset/img/game-demo-pattern-1.png" style="height: 30vh">
+            	<table>
+            		<tr><td></td><td></td><td></td></tr>
+            	</table>
+            </div>
+            <div id="btn-start-test" class="row" style="">
+            	<img src="asset/img/game-start.png" class="right" style="height: 30vh"></div>
+        </div>
+    </section>
+    <section id="tutoiral" style="display: none"></section>
+    <section id="statics" style="display: none"></section>
+    <section id="setting" style="display: none"></section>
+    <script type="text/javascript">
+    $(document).ready(function() {
+        $('.menu-btn').click(function() {
+            let showSection = $(this).attr('id').slice(4, );
+            $('section').hide();
+            $('#' + showSection).fadeIn();
+        });
+        $('.btn-game-level').click(function() {
+            let showLevel = $(this).attr('id').slice(10, );
+            $('#game-levels-menu').hide();
+            $('#levels-screen').fadeIn();
+            $('#btn-demo').fadeIn();
+        });
+        $('#btn-back-menu').click(function(){
+
+        });
+        $('#btn-demo').click(function() {
+            $('#btn-demo-start').toggle();
+            $('#btn-demo-stop').toggle();
+        });
+    });
+    </script>
+</body>
+
+</html>
